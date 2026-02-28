@@ -10,7 +10,7 @@ PLUGIN = { -- luacheck: ignore
     version = "1.0.0",
 
     -- Required: Brief description of the tool
-    description = "A mise tool plugin for screenshotbot",
+    description = "A mise tool plugin for the Screenshotbot CLI",
 
     -- Required: Plugin author/maintainer
     author = "screenshotbot",
