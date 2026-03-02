@@ -28,14 +28,14 @@ function PLUGIN:PostInstall(ctx)
     -- Example 2: Archive already extracted by mise
     -- If pre_install returns a .tar.gz or .zip, mise extracts it automatically
     -- You might just need to move files around:
-    os.execute("ls -l " .. path)
+    -- os.execute("ls -l " .. path)
     os.execute("mkdir -p " .. path .. "/bin")
     os.execute("mv " .. path .. "/recorder " .. path .. "/bin/screenshotbot")
     if os.execute("test -f " .. path .. "/recorder.lwheap") == 0 then
        os.execute("mv " .. path .. "/recorder.lwheap " .. path .. "/bin/screenshotbot.lwheap")
     end
 
-    os.execute("chmod +x " .. path .. "/bin/recorder")
+    os.execute("chmod +x " .. path .. "/bin/screenshotbot")
 
     local testResult = os.execute(destFile .. " --version > /dev/null 2>&1")
     if testResult ~= 0 then
