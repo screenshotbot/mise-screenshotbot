@@ -4,15 +4,15 @@ set -euo pipefail
 
 mise plugin link --force screenshotbot .
 mise cache clear
-mise install screenshotbot@1.0.0
+mise install screenshotbot@2.18.4
 
 # Capture and display the output while also verifying it
-output=$(mise exec "screenshotbot@1.0.0" -- "screenshotbot" --version)
+output=$(mise exec "screenshotbot@2.18.4" -- "screenshotbot" --version)
 echo "screenshotbot output: $output"
 
-if echo "$output" | grep -q 'screenshotbot@1.0.0'; then
+if echo "$output" | grep -q 'v2.18.4'; then
     echo "✓ Tests passed"
 else
-    echo "✗ Test failed: expected version screenshotbot@1.0.0"
+    echo "✗ Test failed: expected version screenshotbot@2.18.4"
     exit 1
 fi
